@@ -67,7 +67,9 @@ export default function MoviesCard({ movie }) {
       <div className="movie-card">
         <div className="card-header">
           <div>
-            <p className="card-title">{movie.title}</p>
+            <p className="card-title">
+              {movie?.title || "Judul tidak tersedia"}
+            </p>
             <div className="card-meta">
               {movie.year && (
                 <span className="card-badge badge-year">{movie.year}</span>

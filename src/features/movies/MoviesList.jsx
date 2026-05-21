@@ -6,7 +6,9 @@ export default function MoviesList() {
   // Komponen akan otomatis melakukan re-render setiap kali nilai movies.list berubah
   const movies = useSelector((state) => state.movies.list);
 
-  if (!movies.length) {
+  // Jika tidak ada film, tampilkan pesan kosong
+  // movies.length === 0 berarti tidak ada film dalam list
+  if (movies.length === 0) {
     return (
       <div style={{ textAlign: "center", padding: "40px 0" }}>
         <p
@@ -31,6 +33,9 @@ export default function MoviesList() {
           gap: 10px;
         }
       `}</style>
+      {/* looping di react menggunakan map untuk menampilkan setiap film dalam
+      bentuk MoviesCard */}
+      {/* movies.forEach (SALAH) */}
       <div className="movie-list">
         {movies.map((movie) => (
           <MoviesCard key={movie.id} movie={movie} />

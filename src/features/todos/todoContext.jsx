@@ -23,6 +23,7 @@ export const TodoProvider = ({ children }) => {
   const [deleteTodo] = useDeleteTodoMutation();
 
   // Wrap mutations for easier usage
+  // Semua metode harus async karena RTK Query mengembalikan promise
   const addTodo = async (data) => {
     return await createTodo(data);
   };

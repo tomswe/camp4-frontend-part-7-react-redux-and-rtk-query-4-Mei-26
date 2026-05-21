@@ -10,6 +10,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     {/* Provider Redux harus membungkus semua komponen agar bisa akses data seperti useReducer dengan useContext */}
     <Provider store={store}>
+      {/* Auth Provider untuk membungkus semua komponen agar bisa akses data auth seperti useReducer dengan useContext */}
       <AuthProvider>
         <RouterProvider router={router} />
       </AuthProvider>

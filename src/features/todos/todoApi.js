@@ -9,7 +9,7 @@ export const todoApi = createApi({
   reducerPath: "todosApi",
 
   baseQuery: fetchBaseQuery({
-    // baseUrl: URL dasar untuk semua request API. Diambil dari environment variable VITE_SERVER_URL dan ditambahkan "/api".
+    // baseUrl: URL dasar untuk semua request API. Diambil dari environment variable VITE_SERVER_URL dan ditambahkan.
     baseUrl: import.meta.env.VITE_SERVER_URL,
     // credentials: "include" memastikan cookie dikirim dengan setiap request, berguna untuk autentikasi berbasis session.
     credentials: "include",
@@ -21,7 +21,7 @@ export const todoApi = createApi({
   endpoints: (builder) => ({
     // Endpoint untuk GET /todos - Menggunakan query untuk operasi read-only. Data akan dicache dan dapat diakses ulang tanpa request baru.
     getTodos: builder.query({
-      query: () => "/todos",
+      query: () => "/todos", // URL endpoint untuk fetch data todos http://localhost:3000/api + /todos
       // providesTags: Menandai cache ini dengan tag "Todo". Jika ada mutation yang invalidates "Todo", cache ini akan dihapus dan refetch.
       providesTags: ["Todo"],
     }),
@@ -60,6 +60,10 @@ export const todoApi = createApi({
 
 // Export hooks yang dihasilkan secara otomatis oleh RTK Query. Hooks ini dapat digunakan di komponen React untuk mengakses data dan melakukan mutations.
 // Contoh: useGetTodosQuery() untuk fetch todos, useCreateTodoMutation() untuk membuat todo baru.
+// getTodos useGetTodosQuery
+// createTodo useCreateTodoMutation
+// updateTodo useUpdateTodoMutation
+// deleteTodo useDeleteTodoMutation
 export const {
   useGetTodosQuery,
   useCreateTodoMutation,

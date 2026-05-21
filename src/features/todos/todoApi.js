@@ -11,7 +11,8 @@ export const todoApi = createApi({
   baseQuery: fetchBaseQuery({
     // baseUrl: URL dasar untuk semua request API. Diambil dari environment variable VITE_SERVER_URL dan ditambahkan.
     // baseUrl: import.meta.env.VITE_SERVER_URL,
-    baseUrl: "https://lavish-creativity-production-7e06.up.railway.app/api",
+    baseUrl:
+      "https://camp4-backend-for-frontend-part-6-30-april-26-production.up.railway.app/api",
     // credentials: "include" memastikan cookie dikirim dengan setiap request, berguna untuk autentikasi berbasis session.
     credentials: "include",
   }),

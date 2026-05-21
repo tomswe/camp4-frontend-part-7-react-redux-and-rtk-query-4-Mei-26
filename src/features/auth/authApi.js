@@ -2,7 +2,8 @@ import axios from "axios";
 
 const api = axios.create({
   // baseURL: import.meta.env.VITE_API_URL || "http://localhost:3000/api",
-  baseURL: "https://lavish-creativity-production-7e06.up.railway.app/api",
+  baseURL:
+    "https://camp4-backend-for-frontend-part-6-30-april-26-production.up.railway.app/api",
   withCredentials: true,
 });
 

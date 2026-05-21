@@ -1,7 +1,8 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: import.meta.env.VITE_SERVER_URL || "http://localhost:3000/api",
+  // baseURL: import.meta.env.VITE_SERVER_URL || "http://localhost:3000/api",
+  baseURL: "https://lavish-creativity-production-7e06.up.railway.app/api",
   timeout: 10000, // 10 detik
   withCredentials: true,
 });

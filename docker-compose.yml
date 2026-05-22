@@ -1,0 +1,10 @@
+# docker-compose.yml
+services:
+  frontend:
+    build: .
+    restart: unless-stopped
+    ports:
+      # Format: "PortKomputerAnda : PortContainer"
+      # Kita gunakan port 8080 di komputer agar tidak bentrok dengan port 80 milik backend.
+      # Nanti Anda bisa mengakses website ini lewat http://localhost:8080
+      - "8080:80"
